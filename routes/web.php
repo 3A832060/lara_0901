@@ -27,5 +27,6 @@ Route::prefix('admin')->group(function () {
     Route::get('posts', [AdminPostsController::class, 'index'])->name('admin.posts.index');  //候台列出所有文章的路由
     Route::get('posts/create', [AdminPostsController::class, 'create'])->name('admin.posts.create');  //候台產生新增表單的路由
     Route::get('posts/{id}/edit', [AdminPostsController::class, 'edit'])->name('admin.posts.edit');  //候台生產修改表單的路由
-    Route::post('posts',[AdminPostsController::class,'store'])->name('admin.posts.store');
+    Route::post('posts',[AdminPostsController::class,'store'])->name('admin.posts.store'); //新增資料
+    Route::patch('posts/{post}',[AdminPostsController::class,'update'])->name('admin.posts.update'); //更新資料
 });
