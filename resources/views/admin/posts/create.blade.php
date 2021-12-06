@@ -30,21 +30,22 @@
 
 <div class="row">
     <div class="col-lg-12">
-        <form role="form">
-
+        <form action="/admin/posts" method="POST" role="form">
+            @method('POST')
+            @csrf
             <div class="form-group">
-                <label>標題：</label>
-                <input class="form-control" placeholder="請輸入文章標題">
+                <label for="title">標題：</label>
+                <input id="title" name="title" class="form-control" value="{{old('title')}}" placeholder="請輸入文章標題">
             </div>
 
             <div class="form-group">
-                <label>內容：</label>
-                <textarea class="form-control" rows="10"></textarea>
+                <label for="content">內容：</label>
+                <textarea id="content" name="content" class="form-control" rows="10">{{old('content')}}</textarea>
             </div>
 
             <div class="form-group">
-                <label>精選？</label>
-                <select class="form-control">
+                <label for="is_feature">精選？</label>
+                <select id="is_feature" name="is_feature" class="form-control">
                     <option value="0">否</option>
                     <option value="1">是</option>
                 </select>
