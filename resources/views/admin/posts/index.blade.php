@@ -46,7 +46,11 @@
                         <td>
                             <a class="btn btn-sm btn-primary" href="{{ route('admin.posts.edit', $post->id) }}">編輯</a>
                             /
-                            <a href="#">刪除</a>
+                            <form action="{{route('admin.posts.destroy',$post->id)}}" method="POST" style="display:inline">
+                                {{method_field('DELETE')}}
+                                {{csrf_field()}}
+                                <button class="btn btn-sm btn-danger" type="submit">刪除</button>
+                            </form>
                         </td>
                     </tr>
                 @endforeach
