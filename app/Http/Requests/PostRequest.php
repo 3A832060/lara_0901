@@ -29,14 +29,4 @@ class PostRequest extends FormRequest
             'is_feature'=>'required|boolean'
         ];
     }
-
-    public function store(PostRequest $request)
-    {
-        //
-    }
-
-    public function update(PostRequest  $request)
-    {
-        //
-    }
 }
